@@ -119,7 +119,7 @@ make dev-stop
 ├── configs
 |   └──config.yml             <- Project configuration for python scripts
 ├── data                      <- Data cache folder
-│   ├── interim               <- Intermediate data that has been transformed.
+│   ├── final                 <- Data that will be used for reports and analysis
 │   └── raw                   <- The original, immutable data dump.
 ├── docker
 │   ├── Dockerfile            <- New project Dockerfile that sources from base ML dev image
