@@ -1,0 +1,6 @@
+data/raw/*.csv
+notebooks/.ipynb_checkpoints/*
+.vscode
+panel_dashboard/.ipynb_checkpoints/*
+panel_dashboard/__pycache__/*
+panel_dashboard/*.pyc
