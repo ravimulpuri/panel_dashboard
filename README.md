@@ -1,6 +1,70 @@
 Panel Dashboard
 ==============================
-This project 
+Panel can be used to create dashboards with the pythonic interface. This library explores the option to develop time-series dashboard using the panel.
+
+`panel_dashboard` library takes in time series data as input and creates three plots in the dashboard for the selected tag.
+
+    1. Tag values vs timestamps
+    2. Histogram of the tag values
+    3. Description pane for the tag values
+
+To understand the options available to create timeseries dashboard use the following command.
+
+ `python3 panel_dashboard/dashboard.py --help`
+
+```
+python3 timeseries.py --help
+usage: timeseries.py [-h] [-f FILENAME]
+                     [-ft {csv,excel,feather,hdf,parquet,pickle}]
+                     [-kwgs [READ_KWARGS [READ_KWARGS ...]]]
+                     [-fa FEATURE_ALIASES] [-d DESCRIBE] [-p PORT]
+                     [-s SAMPLE_RATE] [-w WEBSOCKET_ORIGIN]
+
+Create a dashboard with a pandas readable file (csv, hdf, parquet etc.)
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -f FILENAME, --filename FILENAME
+                        Location of file. By default, it accepts csv file that
+                        should be readable as pd.read_parquet(filename). To
+                        accept different type of file use the filetype and
+                        read_kwargs arguments, (type: str) (default:
+                        /mnt/data/final/historical_stock_prices.parquet)
+  -ft {csv,excel,feather,hdf,parquet,pickle}, --filetype {csv,excel,feather,hdf,parquet,pickle}
+                        Type of file that is provided at filename argument.
+                        Available options can be csv, excel, feather, hdf,
+                        parquet, pickle etc., (type: str) (default: parquet)
+  -kwgs [READ_KWARGS [READ_KWARGS ...]], --read-kwargs [READ_KWARGS [READ_KWARGS ...]]
+                        Additional keyword arguments to read the {filename}
+                        using the pandas read_{filetype}. Keywords should be
+                        provided in the following format -kwgs foo1=bar
+                        foo2=10(type: str) (default: None)
+  -fa FEATURE_ALIASES, --feature-aliases FEATURE_ALIASES
+                        Path to the json file which contains dictionary object
+                        with keys as column names and values as column name
+                        aliases, (type: str) (default:
+                        /mnt/data/final/feature_aliases.json)
+  -d DESCRIBE, --describe DESCRIBE
+                        Should the dashboard include
+                        pandas.tag_series.describe() along with the plot,
+                        (type: bool) (default: True)
+  -p PORT, --port PORT  Port to launch the dashboard on, (type: int) (default:
+                        5006)
+  -s SAMPLE_RATE, --sample_rate SAMPLE_RATE
+                        Fraction of data that should be used for plots. A
+                        float between (0.0, 1.0] that defaults to 1.0
+                        (default: 1.0)
+  -w WEBSOCKET_ORIGIN, --websocket-origin WEBSOCKET_ORIGIN
+                        Websocket origin to allow (useful for running
+                        remotely), (type: int) (default: 49179)
+```
+
+By using default options, the dashboard script utilizes the data available in `data/final` to create a dashboard of historical stock prices. The dataset is downloaded from Kaggle and converted to `parquet` format for convenience. To understand how the conversion is done, go through the jupyter notebooks available in `notebooks` folder.
+
+Preview of the dashboard is posted here.
+
+![dashboard](dashboard.png)
+
 
 # Setup
 
