@@ -1,0 +1,13 @@
+click
+black
+nb_black
+pyarrow
+fastparquet
+ipywidgets
+panel==0.10.2
+param
+bokeh
+tornado
+holoviews
+hvplot
+lxml
